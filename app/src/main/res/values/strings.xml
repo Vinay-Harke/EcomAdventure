@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="app_name">EcomAdventure</string>
+    <string name="login">Login</string>
+    <string name="enter_email_id">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forget_pwd">Forget Password?</string>
+    <string name="or">&#160;&#160;OR&#160;&#160;</string>
+    <string name="facebook_icon">Facebook Icon</string>
+    <string name="instagram_icon">Instagram Icon</string>
+    <string name="whatsapp_icon">Whatsapp Icon</string>
+    <string name="don_have_account">Don\'t have account ?</string>
+    <string name="sign_up">SignUp</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_full_name">Name</string>
+    <string name="enter_address">Address</string>
+    <string name="password">Password</string>
+    <string name="forget_pwd_title">Forget Password?</string>
+    <string name="forget_password_guide">Enter Valid Email Id</string>
+    <string name="submit">Submit</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="otp_verification_guide">Enter One Time Password Sent On Registered Email Id </string>
+    <string name="new_credentials">New Credentials</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_updated">Password Updated</string>
+    <string name="rest_password_success_msg">Your Password has been updated successfully !</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login_underline"><u><b><i>Login</i></b></u></string>
+    <string name="sign_up_underline"><u><b><i>SignUp</i></b></u></string>
+    <string name="back">Back</string>
+    <string name="forget_pwd_logo">Forget Password Logo</string>
+    <string name="icon">Icon</string>
+</resources>
