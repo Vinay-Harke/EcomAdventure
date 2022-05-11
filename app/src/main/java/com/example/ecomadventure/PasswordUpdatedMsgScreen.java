@@ -1,10 +1,10 @@
 package com.example.ecomadventure;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PasswordUpdatedMsgScreen extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class PasswordUpdatedMsgScreen extends AppCompatActivity {
     }
 
     public void callLoginScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(),Login.class);
+        Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
     }
 }

@@ -12,4 +12,7 @@
     <color name="orange2">#FF5722</color>
     <color name="red">#FF0000</color>
     <color name="transparent">#00000000</color>
+    <color name="grey">#989898</color>
+    <color name="fade_orange">#F3C67B</color>
+    <color name="golden">#FFD700</color>
 </resources>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/outside_material_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/inner_material_card_view_for_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:id="@+id/bungee_jumping_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/bungee_jumping_image_des"
+                android:scaleType="fitXY"
+                android:src="@drawable/marvel_doctor_strange_3840x2160" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_for_bj_title"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outside_material_card_view">
+
+        <ImageView
+            android:id="@+id/bj_location_imageview"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/address_icon_foreground"
+            android:backgroundTint="@color/red"
+            android:contentDescription="@string/location" />
+
+        <TextView
+            android:id="@+id/bj_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/belgrano"
+            android:gravity="center"
+            android:text="@string/goa"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bj_des_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/basic"
+        android:text="@string/goa_bungee_des"
+        android:textAlignment="textStart"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_for_bj_title" />
+
+    <RatingBar
+        android:id="@+id/bj_ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:numStars="5"
+        android:stepSize="1"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:theme="@style/RatingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bj_des_textview" />
+
+    <LinearLayout
+        android:id="@+id/linearlout_for_bj_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bj_ratingbar">
+
+        <TextView
+            android:id="@+id/rupess_logo_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/rupee_symbol"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bj_price"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/random_number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/bj_price_per_person_txtview"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:text="@string/per_person_per_night"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_for_fav_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearlout_for_bj_price">
+
+        <Button
+            android:id="@+id/bj_view_details_btn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/rectangular_button"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/view_details"
+            android:textAlignment="center"
+            android:textColor="@color/orange2"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bj_fav_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/favorite_drawer_icon"
+            android:backgroundTint="@color/grey"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bj_book_now_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/book_now_button"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/book_now"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_for_fav_details" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,10 @@
 package com.example.ecomadventure;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.chaos.view.PinView;
 
@@ -19,12 +19,12 @@ public class ForgetPasswordOtpVerification extends AppCompatActivity {
     }
 
     public void callSetNewPasswordScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(),SetNewPasswordScreen.class);
+        Intent intent = new Intent(getApplicationContext(), SetNewPasswordScreen.class);
         startActivity(intent);
     }
 
     public void callForgetPasswordScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(),ForgetPassword.class);
+        Intent intent = new Intent(getApplicationContext(), ForgetPassword.class);
         startActivity(intent);
     }
 

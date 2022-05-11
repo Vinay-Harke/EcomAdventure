@@ -1,19 +1,21 @@
 package com.example.ecomadventure;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.regex.Pattern;
 
 public class SignUp extends AppCompatActivity {
 
+    MaterialCardView signUpCardLout;
     TextInputLayout nameLout, emailLout, addressLout, passwordLout;
     Button signUpBtn;
 
@@ -21,15 +23,21 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        signUpCardLout = findViewById(R.id.signUp_card_lout);
         nameLout = findViewById(R.id.signUp_full_name);
         emailLout = findViewById(R.id.signUp_email);
         addressLout = findViewById(R.id.address);
         passwordLout = findViewById(R.id.signUp_password);
         signUpBtn = findViewById(R.id.signUp_screen_signUp_Btn);
+        nameLout.animate().alpha(1).setDuration(1200).translationX(1);
+        emailLout.animate().alpha(1).setDuration(1300).translationX(1);
+        addressLout.animate().alpha(1).setDuration(1400).translationX(1);
+        passwordLout.animate().alpha(1).setDuration(1500).translationX(1);
+        //signUpCardLout.animate().alpha(1).setDuration(2000).translationY(100);
         signUpBtn.setOnClickListener(view -> {
-            if(validateUserDetails()){
+            if (validateUserDetails()) {
                 System.out.println("\n\n\n\n Hello Here it comes");
-                Toast.makeText(getApplicationContext(),"Successful Registration",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Successful Registration", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -102,7 +110,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void callLoginScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(),Login.class);
+        Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
     }
 }

@@ -31,4 +31,29 @@
     <string name="back">Back</string>
     <string name="forget_pwd_logo">Forget Password Logo</string>
     <string name="icon">Icon</string>
+    <string name="home">Home</string>
+    <string name="about_us">About us</string>
+    <string name="profile">Profile</string>
+    <string name="favourite">Favorite</string>
+    <string name="toolbar">ToolBar</string>
+    <string name="drawerOpen">Open</string>
+    <string name="drawerClose">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="banner_images">Banner Images</string>
+    <string name="bungee_jumping">Bungee Jumping</string>
+    <string name="skiing">Skiing</string>
+    <string name="caving">Caving</string>
+    <string name="desert_camping">Desert Camping</string>
+    <string name="services">Services</string>
+    <string name="bungee_jumping_image_des">Bungee jumping image description</string>
+    <string name="goa">Bungee jumping in goa</string>
+    <string name="goa_bungee_des">One of the most thrilling and adventurous sport apart from all the watersports that you should definitely not miss while in goa</string>
+    <string name="rupee_symbol">\u20B9</string>
+    <string name="per_person_per_night">/person/night</string>
+    <string name="random_number">3000</string>
+    <string name="view_details">View Details</string>
+    <string name="book_now">Book Now</string>
+    <string name="location">location logo</string>
+    <string name="download_ticket">Download Ticket</string>
 </resources>
