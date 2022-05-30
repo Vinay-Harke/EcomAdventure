@@ -12,14 +12,14 @@
     <string name="don_have_account">Don\'t have account ?</string>
     <string name="sign_up">SignUp</string>
     <string name="enter_email">Email</string>
-    <string name="enter_full_name">Name</string>
+    <string name="enter_user_name">Username</string>
     <string name="enter_address">Address</string>
     <string name="password">Password</string>
     <string name="forget_pwd_title">Forget Password?</string>
-    <string name="forget_password_guide">Enter Valid Email Id</string>
+    <string name="forget_password_guide">Enter Valid Username</string>
     <string name="submit">Submit</string>
     <string name="otp_verification">OTP Verification</string>
-    <string name="otp_verification_guide">Enter One Time Password Sent On Registered Email Id </string>
+    <string name="otp_verification_guide">Enter One Time Password Sent On Registered Phone Number </string>
     <string name="new_credentials">New Credentials</string>
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -56,4 +56,51 @@
     <string name="book_now">Book Now</string>
     <string name="location">location logo</string>
     <string name="download_ticket">Download Ticket</string>
+    <string name="no_of_tickets">No of Tickets</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="date">Choose Date</string>
+    <string name="date_hint">dd/mm/yy</string>
+    <string name="make_paymnet">Make Payment</string>
+    <string name="about_us_des">
+        From 2012 to 2021 Our leadership team worked with many corporates, colleges, schools and institutions to organise adventure group trips and
+        in these 9 years we understood HOTELS are old and conventional and people are looking for more experimental places to spend their vacations
+        but hard to discover.\n\n After intensive ground work for more than 2 years, we discovered a lot of Camping Sites, Igloos, Homestays, Cottages
+        exist at most uncrowded and virgin destination, which can\'t be discovered if you have never been there. We thought to make these stays available by
+        making it more organised keeping in mind amenities, safety and cleanliness.
+    </string>
+    <string name="bj_in_goa">BUNGEE JUMPING IN GOA</string>
+    <string name="bj_in_delhi">BUNGEE JUMPING IN DELHI</string>
+    <string name="bj_in_lonavala">BUNGEE JUMPING IN LONAVALA</string>
+
+    <string name="bj_des_goa">One of the most thrillig and adventures sport apart from all the water sports that you should definitely try.</string>
+    <string name="bj_des_delhi">Wanderlust is the provider for this sport. All the equipment is imported from Japan and all staff are very skilled.</string>
+    <string name="bj_des_lonavala">Bungee Jumping takes place in an adventure park called Della Adventures. The equipments attached at a safe height.</string>
+    <string name="unique_stay">Unique Stays</string>
+    <string name="adventure_sport">Adventure Sports</string>
+    <string name="lowest_price">Lowest Price</string>
+    <string name="verified_and_stay">Verified and Stay</string>
+    <string name="customer_supprt">24 x 7 Support</string>
+    <string name="customer_service_offer">Things we offer to our Customers</string>
+    <string name="adventures">Adventures</string>
+    <string name="food_and_drink">Food and Drink</string>
+    <string name="safety_guide">Safety Guide</string>
+    <string name="adventures_service">while providing you with tons of new experiences, we provide best adventure places in India.</string>
+    <string name="food_and_drink_service">We provide high quality food and beverages in friendly and welcoming atmosphere.</string>
+    <string name="safety_guide_ser">We believe Safety and Security are vital to providing quality in happy tourism.</string>
+    <string name="customer_support_service">We provide 24 x 7 service to our customers via  phone call or  whatsapp.</string>
+    <string name="enter_phone_no">Phone</string>
+    <string name="user_authenticate">User Authentication</string>
+    <string name="verify_otp_description">Enter OTP sent of your entered mobile number.</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="web_client_id">723466106200-r6b4snkljcoe5q7eubud94chsai6ihcr.apps.googleusercontent.com</string>
+    <string name="change_password">Change Password</string>
+    <string name="click_here_change_password">Click to Change Password</string>
+    <string name="history">My Adventures</string>
+    <string name="transaction_status">Transaction Status: </string>
+    <string name="status">Status</string>
+    <string name="transaction_id">TRANSACTION ID:</string>
+    <string name="chatbot">FAQ</string>
+
+
 </resources>

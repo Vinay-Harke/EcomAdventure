@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     tools:context=".PdfDownload">
-
     <Button
         android:id="@+id/download_pdf"
         android:layout_width="match_parent"

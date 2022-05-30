@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "723466106200",
+    "firebase_url": "https://ecomadventure-7e915-default-rtdb.firebaseio.com",
+    "project_id": "ecomadventure-7e915",
+    "storage_bucket": "ecomadventure-7e915.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723466106200:android:80f7df5a3b4ebbf372e12d",
+        "android_client_info": {
+          "package_name": "com.example.ecomadventure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723466106200-l51e2cu1b07a7vi2adcdlktomf28n00b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecomadventure",
+            "certificate_hash": "6d9fabb36e09920a3558047eb004ba074b7c6196"
+          }
+        },
+        {
+          "client_id": "723466106200-r6b4snkljcoe5q7eubud94chsai6ihcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTDlztnAvbAUNuPX4L8bPNANeBVMnWutw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723466106200-r6b4snkljcoe5q7eubud94chsai6ihcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

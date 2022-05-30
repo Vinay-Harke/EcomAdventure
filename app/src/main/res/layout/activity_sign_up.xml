@@ -18,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +26,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
+                android:id="@+id/signup_back_imageBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -65,12 +66,12 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/signUp_full_name"
+                        android:id="@+id/signUp_user_name"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:alpha="0"
-                        android:hint="@string/enter_full_name"
+                        android:hint="@string/enter_user_name"
                         android:textColorHint="@color/red"
                         android:translationX="-300dp"
                         app:boxStrokeColor="@color/red"
@@ -116,13 +117,13 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/address"
+                        android:id="@+id/signUp_phone"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:alpha="0"
-                        android:hint="@string/enter_address"
+                        android:hint="@string/enter_phone_no"
                         android:textColorHint="@color/red"
                         android:translationX="-300dp"
                         app:boxStrokeColor="@color/red"
@@ -130,15 +131,15 @@
                         app:endIconMode="clear_text"
                         app:endIconTint="@color/black"
                         app:hintTextColor="@color/red"
-                        app:startIconDrawable="@drawable/address_icon_foreground"
+                        app:startIconDrawable="@drawable/field_phone_icon_foreground"
                         app:startIconTint="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
-
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:inputType="textPostalAddress"
+                            android:inputType="phone"
                             android:textColor="@color/black" />
+
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout

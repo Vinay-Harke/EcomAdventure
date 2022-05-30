@@ -9,20 +9,42 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.regex.Pattern;
 
 public class SetNewPasswordScreen extends AppCompatActivity {
     TextInputLayout newPasswordLout, confirmPasswordLout;
-    Button loginBtn;
-
+    Button submitBtn;
+    DatabaseReference databaseReference;
+    String newPassword;
+    String confirmPassword;
+    String username;
+    DaoUser daoUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_new_password_screen);
         newPasswordLout = findViewById(R.id.reset_new_password);
         confirmPasswordLout = findViewById(R.id.reset_confirm_password);
-        loginBtn = findViewById(R.id.reset_password_success_login_btn);
+        daoUser = new DaoUser();
+        username = getIntent().getStringExtra("username");
+        submitBtn = findViewById(R.id.new_cred_submit_btn);
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                newPassword = newPasswordLout.getEditText().getText().toString().trim();
+                updatePasswordInUserDb(username,newPassword);
+                Intent intent= new Intent(getApplicationContext(),PasswordUpdatedMsgScreen.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    private void updatePasswordInUserDb(String username, String newPassword) {
+        databaseReference=daoUser.getRefToCheckIfUserExists(username);
+        databaseReference.child("password").setValue(newPassword);
     }
 
     public void callPasswordUpdatedMsgScreen(View view) {

@@ -14,11 +14,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class ViewDetails extends YouTubeBaseActivity {
     private YouTubePlayerView youTubePlayerView;
     private RecyclerView recyclerView;
-    int[] imagesId = {R.drawable._009_lamborghini_gallardo_lp560_4_spyder_1280x1024,
-            R.drawable._009_lamborghini_insecta_concept_design_1280x1024,
-            R.drawable.google_lab_1920x1080,
-            R.drawable.marvel_doctor_strange_3840x2160,
-            R.drawable.tron_lamborghini_aventador_1920x1080};
+    int[] imagesId = {};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

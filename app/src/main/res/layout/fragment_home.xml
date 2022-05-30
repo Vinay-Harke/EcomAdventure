@@ -80,6 +80,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold|italic"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Triangle" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/skiing_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="5dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="240dp"
@@ -98,6 +104,12 @@
                 android:textStyle="bold|italic"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Triangle" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/caving_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="5dp" />
             <com.google.android.material.button.MaterialButton
                 android:layout_width="240dp"
                 android:layout_height="60dp"
@@ -114,23 +126,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold|italic"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Triangle" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="240dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/orange2"
-                android:clickable="false"
-                android:elevation="10dp"
-                android:focusable="false"
-                android:fontFamily="@font/bungee"
-                android:gravity="center"
-                android:text="@string/services"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold|italic"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Triangle" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/desert_camping_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="5dp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

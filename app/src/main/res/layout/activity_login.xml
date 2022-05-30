@@ -57,12 +57,12 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/login_email"
+                        android:id="@+id/login_username"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:alpha="0"
-                        android:hint="@string/enter_email_id"
+                        android:hint="@string/enter_user_name"
                         android:padding="10dp"
                         android:textColorHint="@color/red"
                         android:translationX="-300dp"
@@ -77,7 +77,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
                             android:textColor="@color/black" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -104,6 +104,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textPassword"
+                            android:autofillHints="password"
                             android:textColor="@color/black" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -129,7 +130,6 @@
                         android:background="@drawable/circular_image_button"
                         android:elevation="5dp"
                         android:gravity="center"
-                        android:onClick="callHomeScreen"
                         android:text="@string/login"
                         android:textAlignment="center"
                         android:textAllCaps="true"
@@ -190,14 +190,14 @@
                     app:srcCompat="@drawable/facebook_icon" />
 
                 <ImageButton
-                    android:id="@+id/instagram_login_btn"
+                    android:id="@+id/google_login_btn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="5dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:backgroundTint="@color/transparent"
                     android:contentDescription="@string/instagram_icon"
-                    app:srcCompat="@drawable/instagram_icon" />
+                    app:srcCompat="@drawable/google_svgrepo_com" />
 
                 <ImageButton
                     android:id="@+id/whatsapp_login_btn"

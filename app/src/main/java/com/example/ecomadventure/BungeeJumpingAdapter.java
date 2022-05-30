@@ -1,8 +1,9 @@
 package com.example.ecomadventure;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,32 +11,32 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.razorpay.Checkout;
-import com.razorpay.PaymentResultListener;
+import java.util.ArrayList;
 
-import org.json.JSONObject;
-
-public class BungeeJumpingAdapter extends RecyclerView.Adapter<BungeeJumpingAdapter.Holder> implements PaymentResultListener {
+public class BungeeJumpingAdapter extends RecyclerView.Adapter<BungeeJumpingAdapter.Holder>{
     private Context context;
     private int[] images;
     private int[] price;
     private int[] ratings;
     private String[] title;
     private String[] information;
+    private boolean fav_flag=true;
+    private ArrayList<String> getFavkey = new ArrayList<>();
 
-    public BungeeJumpingAdapter(Context context, int[] images, int[] price, int[] ratings, String[] title, String[] information) {
+    public BungeeJumpingAdapter(Context context, int[] images, int[] price, int[] ratings, String[] title, String[] information,ArrayList<String> getFavkey) {
         this.context = context;
         this.images = images;
         this.price = price;
         this.ratings = ratings;
         this.title = title;
         this.information = information;
+        this.getFavkey = getFavkey;
+
     }
 
     @NonNull
@@ -50,72 +51,66 @@ public class BungeeJumpingAdapter extends RecyclerView.Adapter<BungeeJumpingAdap
         holder.imageView.setImageResource(images[position]);
         holder.price.setText(Integer.toString(price[position]));
         holder.textViewInfo.setText(information[position]);
-        holder.textViewTitle.setText(information[position]);
+        holder.textViewTitle.setText(title[position]);
         holder.ratingBar.setRating(ratings[position]);
+        String str=(""+title[position]+""+position).toLowerCase().replaceAll("\\s","");
+        if(checkIsFav(str)){
+            Drawable buttonDrawable = holder.favoriteBtn.getBackground();
+            buttonDrawable = DrawableCompat.wrap(buttonDrawable);
+            //the color is a direct color int and not a color resource
+            DrawableCompat.setTint(buttonDrawable,context.getResources().getColor(R.color.pink) );
+            holder.favoriteBtn.setBackground(buttonDrawable);
+        }
         holder.bookNowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Checkout.preload(context);
-                Checkout checkout = new Checkout();
-                checkout.setKeyID("rzp_test_pHKXIfwdACecCv");
-
-                final Activity activity  = (Activity) view.getContext();
-
-
-                // initialize json object
-                try {
-                    JSONObject object = new JSONObject();
-                    // to put name
-                    object.put("name", "Viayak Harke");
-
-                    // put description
-                    object.put("description", "Bhadwaa");
-                    // object.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3
-
-                    // to set theme color
-                    object.put("theme.color", "#EC9706");
-
-                    // put the currency
-                    object.put("currency", "INR");
-
-                    // put amount
-                    int amount = Math.round(price[position]*100);
-                    object.put("amount",amount);
-                    //object.put("prefill.email", "gaurav.kumar@example.com");
-                    //object.put("prefill.contact","9988776655");
-
-                    JSONObject retryObj = new JSONObject();
-                    retryObj.put("enabled", true);
-                    retryObj.put("max_count", 4);
-                    object.put("retry", retryObj);
-
-                    checkout.open((Activity) activity, object);
+                Bundle bundle = new Bundle();
+                bundle.putInt("image",images[position]);
+                bundle.putInt("amount",price[position]);
+                bundle.putString("title",title[position]);
+                Intent intent = new Intent(context,BookingDetails.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
+        holder.favoriteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(fav_flag){
+                    fav_flag=false;
+                    Drawable buttonDrawable = holder.favoriteBtn.getBackground();
+                    buttonDrawable = DrawableCompat.wrap(buttonDrawable);
+                    //the color is a direct color int and not a color resource
+                    DrawableCompat.setTint(buttonDrawable,view.getContext().getResources().getColor(R.color.pink) );
+                    holder.favoriteBtn.setBackground(buttonDrawable);
+                    Favorite favorite = new Favorite(String.valueOf(images[position]),String.valueOf(price[position]),String.valueOf(ratings[position]),title[position],information[position],HomeScreen.getUserName());
+                    DaoUser daoUser = new DaoUser();
+                    daoUser.addFavorites(favorite,""+title[position]+""+position);
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
+                else{
+
+                    fav_flag=true;
+                    Drawable buttonDrawable = holder.favoriteBtn.getBackground();
+                    buttonDrawable = DrawableCompat.wrap(buttonDrawable);
+                    //the color is a direct color int and not a color resource
+                    DrawableCompat.setTint(buttonDrawable,view.getContext().getResources().getColor(R.color.grey) );
+                    holder.favoriteBtn.setBackground(buttonDrawable);
+                    String username = HomeScreen.getUserName();
+                    String key = (""+title[position]+""+position).toLowerCase().replaceAll("\\s","");
+                    DaoUser daoUser = new DaoUser();
+                    daoUser.removeFavorite(username,key);
                 }
-                Toast.makeText(view.getContext(),information[position],Toast.LENGTH_LONG).show();
             }
         });
     }
 
-
+    private boolean checkIsFav(String str) {
+        return getFavkey.contains(str);
+    }
 
     @Override
     public int getItemCount() {
         return images.length;
-    }
-
-    @Override
-    public void onPaymentSuccess(String s) {
-        //Toast.makeText(this, "Payment is successful : " + s, Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(context,PdfDownload.class);
-        context.startActivity(intent);
-    }
-
-    @Override
-    public void onPaymentError(int i, String s) {
-        //Toast.makeText(this, "Payment Failed due to error : " + s, Toast.LENGTH_LONG).show();
     }
 
     public class Holder extends RecyclerView.ViewHolder {
@@ -125,6 +120,7 @@ public class BungeeJumpingAdapter extends RecyclerView.Adapter<BungeeJumpingAdap
         RatingBar ratingBar;
         TextView price;
         Button bookNowBtn;
+        Button favoriteBtn;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -134,7 +130,7 @@ public class BungeeJumpingAdapter extends RecyclerView.Adapter<BungeeJumpingAdap
             ratingBar = itemView.findViewById(R.id.bj_ratingbar);
             price = itemView.findViewById(R.id.bj_price);
             bookNowBtn = itemView.findViewById(R.id.bj_book_now_btn);
-
+            favoriteBtn = itemView.findViewById(R.id.bj_fav_btn);
         }
     }
 }

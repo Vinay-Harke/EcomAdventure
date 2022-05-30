@@ -18,8 +18,8 @@
             android:id="@+id/banner_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:src="@drawable/imperious_adventur_tours"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/banner_images"
             android:scaleType="fitXY" />
     </com.google.android.material.card.MaterialCardView>
 

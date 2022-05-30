@@ -10,12 +10,25 @@
             android:icon="@drawable/ic_baseline_ballot_24"
             android:title="@string/about_us" />
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/profile_drawer_icon"
-            android:title="@string/profile" />
+            android:id="@+id/nav_services"
+            android:icon="@drawable/services_svgrepo_com"
+            android:title="@string/services" />
         <item
             android:id="@+id/nav_favourite"
             android:icon="@drawable/favorite_drawer_icon"
             android:title="@string/favourite" />
+        <item
+            android:id="@+id/nav_my_adventure"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="@string/history" />
+        <item
+            android:id="@+id/nav_chatbot"
+            android:icon="@drawable/robot_svgrepo_com"
+            android:title="@string/chatbot" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile_drawer_icon"
+            android:title="@string/profile" />
+
     </group>
 </menu>

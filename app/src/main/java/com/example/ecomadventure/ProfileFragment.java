@@ -1,11 +1,21 @@
 package com.example.ecomadventure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,11 +28,14 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private Button changePwdBtn;
+    private View view;
+    private DaoUser daoUser;
+    private String username,email,phoneNo;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private TextView usernameTxtView,emailTextView,phoneNoTxtView;
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -58,6 +71,47 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
+        changePwdBtn = view.findViewById(R.id.profile_fragment_change_password_btn);
+
+        usernameTxtView = view.findViewById(R.id.profile_fragment_username);
+        phoneNoTxtView = view.findViewById(R.id.profile_fragment_phone);
+        emailTextView = view.findViewById(R.id.profile_fragment_email);
+
+        username = HomeScreen.getUserName();
+        daoUser = new DaoUser();
+        User user = new User(username);
+
+        Query checkUser = daoUser.validateUserCredentials(user);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+                    phoneNo = snapshot.child(username).child("phone").getValue(String.class);
+                    email = snapshot.child(username).child("email").getValue(String.class);
+                    assignData(email,phoneNo);
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        usernameTxtView.setText(username);
+        changePwdBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),SetNewPasswordScreen.class);
+                intent.putExtra("username",username);
+                ((HomeScreen)getActivity()).startActivity(intent);
+            }
+        });
+        return view;
+    }
+
+    private void assignData(String email, String phoneNo) {
+        emailTextView.setText(email);
+        phoneNoTxtView.setText(phoneNo);
     }
 }
